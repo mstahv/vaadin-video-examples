@@ -7,16 +7,9 @@ import com.vaadin.flow.router.Route;
 @Route("")
 public class CustomerView extends VerticalLayout {
 
-    private final CustomerRepository repository;
-    private final Grid<Customer> grid;
-
     public CustomerView(CustomerRepository repository) {
-        this.repository = repository;
-        this.grid = new Grid<>(Customer.class);
-        
+        var grid = new Grid<Customer>(Customer.class);
         grid.setItems(repository.findAll());
-        
         add(grid);
-        setSizeFull();
     }
 }
