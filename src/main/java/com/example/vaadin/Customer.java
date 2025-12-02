@@ -8,41 +8,41 @@ import jakarta.persistence.Id;
 @Entity
 public class Customer {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String name;
-    private String email;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long customerId;
+  private String name;
+  private String email;
 
-    public Customer() {
-    }
+  public Customer() {
+  }
 
-    public Customer(String name, String email) {
-        this.name = name;
-        this.email = email;
-    }
+  public Customer(String name, String email) {
+    this.name = name;
+    this.email = email;
+  }
 
-    public Long getId() {
-        return id;
-    }
+  public Long getCustomerId() {
+    return customerId;
+  }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+  public void setCustomerId(Long id) {
+    this.customerId = id;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public String getEmail() {
-        return email;
-    }
+  public String getEmail() {
+    return email;
+  }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+  public void setEmail(String email) {
+    this.email = email;
+  }
 }
