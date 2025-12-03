@@ -1,0 +1,21 @@
+-- demo data for the customer database table
+INSERT INTO customer (name, email) VALUES ('John Smith', 'john.smith@alpha.com');
+INSERT INTO customer (name, email) VALUES ('Jane Doe', 'jane.doe@bluefox.io');
+INSERT INTO customer (name, email) VALUES ('Bob Johnson', 'bob.johnson@contoso.org');
+INSERT INTO customer (name, email) VALUES ('Alice Williams', 'alice.williams@sunset.co');
+INSERT INTO customer (name, email) VALUES ('Charlie Brown', 'charlie.brown@northwind.net');
+INSERT INTO customer (name, email) VALUES ('Diana Davis', 'diana.davis@aurora.dev');
+INSERT INTO customer (name, email) VALUES ('Edward Miller', 'edward.miller@evergreen.io');
+INSERT INTO customer (name, email) VALUES ('Fiona Wilson', 'fiona.wilson@lumenlabs.com');
+INSERT INTO customer (name, email) VALUES ('George Moore', 'george.moore@acmemail.com');
+INSERT INTO customer (name, email) VALUES ('Hannah Taylor', 'hannah.taylor@riverside.org');
+INSERT INTO customer (name, email) VALUES ('Ian Anderson', 'ian.anderson@clearwater.com');
+INSERT INTO customer (name, email) VALUES ('Julia Thomas', 'julia.thomas@peakview.net');
+INSERT INTO customer (name, email) VALUES ('Kevin Jackson', 'kevin.jackson@heritage.co');
+INSERT INTO customer (name, email) VALUES ('Laura White', 'laura.white@modernmail.io');
+INSERT INTO customer (name, email) VALUES ('Michael Harris', 'michael.harris@skyline.ai');
+INSERT INTO customer (name, email) VALUES ('Nancy Martin', 'nancy.martin@horizonmail.com');
+INSERT INTO customer (name, email) VALUES ('Oliver Thompson', 'oliver.thompson@venture.io');
+INSERT INTO customer (name, email) VALUES ('Patricia Garcia', 'patricia.garcia@opalstone.org');
+INSERT INTO customer (name, email) VALUES ('Quinn Martinez', 'quinn.martinez@silverline.dev');
+INSERT INTO customer (name, email) VALUES ('Rachel Robinson', 'rachel.robinson@trailhead.co');
