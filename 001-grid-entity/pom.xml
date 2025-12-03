@@ -10,10 +10,8 @@
         <relativePath/>
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>vaadin-grid-example</artifactId>
+    <artifactId>vaadin-grid-reflection-demo</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>Vaadin Grid Example</name>
-    <description>Simple Vaadin Grid example showing Customer entity</description>
 
     <properties>
         <java.version>17</java.version>

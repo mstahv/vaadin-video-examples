@@ -9,7 +9,7 @@ import com.vaadin.flow.router.Route;
 /**
  * View where we display a list of all customers in a {@link Grid} component.
  */
-@Route("/customers")
+@Route("")
 @PageTitle("Customers")
 @Menu(title = "Customers", icon = "VAADIN_USER")
 public class CustomerView extends VerticalLayout {
