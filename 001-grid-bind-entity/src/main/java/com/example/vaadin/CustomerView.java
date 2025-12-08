@@ -58,6 +58,7 @@ public class CustomerView extends VerticalLayout {
    */
   private void minimalExample(CustomerRepository repository) {
 
+    // grid automatically generates columns when the entity class is provided
     var grid = new Grid<Customer>(Customer.class);
     add(grid);
 

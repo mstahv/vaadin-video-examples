@@ -1,4 +1,4 @@
-# Vaadin Grid: display database entity with reflection
+# Vaadin Grid: bind to database entity
 
 A minimal Vaadin 24 + Spring Boot project demonstrating how to display a database content (database entity mapped to a table) in a Vaadin Grid component.
 
