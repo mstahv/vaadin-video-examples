@@ -40,20 +40,22 @@ public class ProductView extends VerticalLayout {
     grid.setSizeFull();
 
     // add columns with sorting enabled
-    grid.addColumn(Product::getId)
-        .setHeader("ID")
-        .setAutoWidth(true)
-        .setSortable(true);
-
     grid.addColumn(Product::getName)
         .setHeader("Name")
         .setAutoWidth(true) 
         .setSortable(true);
 
-    grid.addColumn(Product::getEmail)
-        .setHeader("Email")
+    grid.addColumn(Product::getCategory)
+        .setHeader("Category")
         .setAutoWidth(true)
         .setSortable(true);
+
+    grid.addColumn(Product::getInventoryCount)
+        .setHeader("Inventory")
+        .setAutoWidth(true)
+        .setSortable(true);
+
+    grid.setMultiSort(true);
 
     add(grid);
 
@@ -68,7 +70,18 @@ public class ProductView extends VerticalLayout {
    * method for reference on production quality code.
    */
   private void minimalExample(ProductRepository repository) {
-    
+    setSizeFull();
+
+    // providing the class to the grid will auto-generate columns for all fields
+    var grid = new Grid<Product>(Product.class);
+
+    // get the name column and enable sorting
+    grid.getColumnByKey("name")
+        .setSortable(true);
+    add(grid);
+
+    var products = repository.findAll();
+    grid.setItems(products);
   }
 
 }

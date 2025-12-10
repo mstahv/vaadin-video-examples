@@ -1,5 +1,6 @@
 package com.example.vaadin;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,14 +16,17 @@ public class Product {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
   private String name;
-  private String email;
+  private String category;
+  @Column(name = "inventory_count")
+  private int inventoryCount;
 
   public Product() {
   }
 
-  public Product(String name, String email) {
+  public Product(String name, String category, int inventoryCount) {
     this.name = name;
-    this.email = email;
+    this.category = category;
+    this.inventoryCount = inventoryCount;
   }
 
   public Long getId() {
@@ -41,12 +45,20 @@ public class Product {
     this.name = name;
   }
 
-  public String getEmail() {
-    return email;
+  public String getCategory() {
+    return category;
   }
 
-  public void setEmail(String email) {
-    this.email = email;
+  public void setCategory(String category) {
+    this.category = category;
+  }
+
+  public int getInventoryCount() {
+    return inventoryCount;
+  }
+
+  public void setInventoryCount(int inventoryCount) {
+    this.inventoryCount = inventoryCount;
   }
 
 }
