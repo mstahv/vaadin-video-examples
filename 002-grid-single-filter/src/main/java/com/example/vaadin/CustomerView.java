@@ -1,6 +1,7 @@
 package com.example.vaadin;
 
 import org.apache.commons.lang3.StringUtils;
+
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
@@ -19,18 +20,18 @@ import com.vaadin.flow.router.Route;
 @Menu(title = "Customers", icon = "VAADIN_USER")
 public class CustomerView extends VerticalLayout {
 
-  public CustomerView(CustomerRepository repository) {
-    bestPracticeExample(repository);
-    // minimalExample(repository);
+  public CustomerView(CustomerService service) {
+    bestPracticeExample(service);
+    // minimalExample(service);
   }
   
   /**
    * Below is a more in-depth explanation of adding filtering to a {@link Grid} component.
    * The code in this function represents a best-practice approach and is the preferred approach
    * for production quality code.
-   * @param repository
+   * @param service
    */
-  private void bestPracticeExample(CustomerRepository repository) {
+  private void bestPracticeExample(CustomerService service) {
 
     // tell the view to take up all of the remaining screen space
     setSizeFull();
@@ -52,7 +53,7 @@ public class CustomerView extends VerticalLayout {
 
     // create the search field component
     var searchField = new TextField();
-    searchField.setValueChangeMode(ValueChangeMode.EAGER);
+    searchField.setValueChangeMode(ValueChangeMode.LAZY);
     searchField.addValueChangeListener(e -> dataView.refreshAll());
     searchField.setPlaceholder("Search");
     searchField.setPrefixComponent(new Icon(VaadinIcon.SEARCH));
@@ -74,7 +75,7 @@ public class CustomerView extends VerticalLayout {
     // fetch all of the users and add them to our grid
     // note: we must use dataView.setItems, using grid.setItems 
     // will create a new data view and thus remove our filter function
-    var customers = repository.findAll();
+    var customers = service.findAll();
     dataView.setItems(customers);
   }
   
@@ -83,7 +84,7 @@ public class CustomerView extends VerticalLayout {
    * get an overview of the feature, but refer to the {@link #bestPracticeExample} 
    * method for reference on production quality code.
    */
-  private void minimalExample(CustomerRepository repository) {
+  private void minimalExample(CustomerService service) {
     setSizeFull();
 
     var grid = new Grid<Customer>();
@@ -110,7 +111,7 @@ public class CustomerView extends VerticalLayout {
 
     add(searchField, grid);
 
-    var customers = repository.findAll();
+    var customers = service.findAll();
     dataView.setItems(customers);
   }
 

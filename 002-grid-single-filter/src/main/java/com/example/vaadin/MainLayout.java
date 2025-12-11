@@ -23,7 +23,8 @@ public class MainLayout extends AppLayout {
     var toggle = new DrawerToggle();
 
     viewTitle = new H1("Dashboard");
-    viewTitle.getStyle().set("font-size", "var(--lumo-font-size-l)")
+    viewTitle.getStyle()
+        .set("font-size", "var(--lumo-font-size-l)")
         .set("margin", "0");
 
     var nav = createNavigation();

@@ -28,9 +28,6 @@ The application will start on http://localhost:8080/
 
 - Vaadin 24
 - Spring Boot 3
-- Spring Data JPA
-- H2 Database (embedded)
-- Java 21
 
 ## Useful links
 

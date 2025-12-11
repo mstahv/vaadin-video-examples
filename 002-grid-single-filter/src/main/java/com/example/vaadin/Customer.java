@@ -1,27 +1,20 @@
 package com.example.vaadin;
 
-import java.sql.Date;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 
-/**
- * JPA entity that represents the `customer` table in our database.
- */
-@Entity
 public class Customer {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
   private String name;
   private String email;
 
+  /**
+   * Data model representing a customer.
+   */
   public Customer() {
   }
 
-  public Customer(String name, String email) {
+  public Customer(Long id, String name, String email) {
+    this.id = id;
     this.name = name;
     this.email = email;
   }
