@@ -4,8 +4,11 @@ import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.grid.GridVariant;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Image;
+import com.vaadin.flow.function.ValueProvider;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.theme.lumo.LumoUtility;
+
+import java.util.function.Supplier;
 
 @Route("")
 public class EmployeeView extends Div {
@@ -27,23 +30,19 @@ public class EmployeeView extends Div {
       setMultiSort(true);
       setSizeFull();
 
-      addComponentColumn(employee -> new EmployeeImage(employee))
-          .setAutoWidth(true);
+      addComponentColumn(employee -> new EmployeeImage(employee));
 
-      addColumn(Employee::getName)
-          .setHeader("Name")
-          .setAutoWidth(true)
-          .setSortable(true);
+      addSortableColumn(Employee::getName, "Name");
+      addSortableColumn(Employee::getDepartment, "Department");
+      addSortableColumn(Employee::getEmail, "Email");
 
-      addColumn(Employee::getDepartment)
-          .setHeader("Department")
-          .setAutoWidth(true)
-          .setSortable(true);
+      getColumns().forEach(c -> c.setAutoWidth(true));
+    }
 
-      addColumn(Employee::getEmail)
-          .setHeader("Email")
-          .setAutoWidth(true)
-          .setSortable(true);
+    private void addSortableColumn(ValueProvider<Employee,String> columnContent, String header) {
+        addColumn(columnContent)
+                .setHeader(header)
+                .setSortable(true);
     }
   }
 

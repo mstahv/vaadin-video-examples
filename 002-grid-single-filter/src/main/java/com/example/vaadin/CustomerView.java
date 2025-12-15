@@ -46,9 +46,9 @@ public class CustomerView extends VerticalLayout {
   class CustomerGrid extends Grid<Customer> {
 
     public CustomerGrid() {
-      addColumn(Customer::getId);
-      addColumn(Customer::getName);
-      addColumn(Customer::getEmail);
+      addColumn(Customer::getId).setHeader("Id");
+      addColumn(Customer::getName).setHeader("Name");
+      addColumn(Customer::getEmail).setHeader("Email");
 
       // automatically determine column widths based on content
       getColumns().forEach(c -> c.setAutoWidth(true));
@@ -57,10 +57,13 @@ public class CustomerView extends VerticalLayout {
   }
 
   class SearchField extends TextField {{
+    // With lazy value change mode, event is fired afer user has a short break,
+    // no need to hit enter
     setValueChangeMode(ValueChangeMode.LAZY);
     setPlaceholder("Search");
     setPrefixComponent(new Icon(VaadinIcon.SEARCH));
     setWidthFull();
+    setClearButtonVisible(true);
   }}
 
   /**
