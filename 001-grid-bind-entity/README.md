@@ -1,6 +1,6 @@
 # Vaadin Grid: bind to database entity
 
-A minimal Vaadin 24 + Spring Boot project demonstrating how to display a database content (database entity mapped to a table) in a Vaadin Grid component.
+A minimal Vaadin 25 + Spring Boot project demonstrating how to display a database content (database entity mapped to a table) in a Vaadin Grid component.
 
 To learn more about building modern web apps in Java, visit the [Vaadin website](http://vaadin.com).
 
@@ -26,8 +26,8 @@ The application will start on http://localhost:8080/
 
 ## Technology Stack
 
-- Vaadin 24
-- Spring Boot 3
+- Vaadin 25
+- Spring Boot 4
 - Spring Data JPA
 - H2 Database (embedded)
 - Java 21
